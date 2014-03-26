@@ -1,6 +1,7 @@
 class SessionsController < ApplicationController
 
   def new
+    response.headers['X-Csrf-Token'] = form_authenticity_token
   end
 
   def create
